@@ -6,6 +6,15 @@ class StrMixin:
         fields = {k: v for k, v in self._dict_.items() if v is not None}
         return ", ".join(f"{key}={value}" for key, value in fields.items())
 
+class AddressLookupResponse(StrMixin, BaseModel):
+    summaryline: Optional[str] = None
+    addressline1: Optional[str] = None
+    addressline2: Optional[str] = None
+    addressline3: Optional[str] = None
+    addressline4: Optional[str] = None
+    addressline5: Optional[str] = None
+    nextpage: Optional[str] = None
+
 class BankValidationResponse(StrMixin, BaseModel):
     valid: Optional[bool] = None
     stateid: Optional[int] = None
