@@ -10,10 +10,10 @@ An unofficial Python client for [Postcoder](https://postcoder.com), the popular 
 
 Currently supports the following Postcoder features:
 
+- Global address and postcode lookup
 - Bank account validation
 - Email address validation
 - Mobile phone number validation
-- TODO: Address and postcode lookup
 
 ## Installation
 
@@ -53,7 +53,7 @@ for address in address_result:
     print(address.addressline3) if address.addressline3 is not None else None
     print(address.addressline4) if address.addressline4 is not None else None
     print(address.addressline5) if address.addressline5 is not None else None
-    
+
     print(f"Next page of results: {address.nextpage}") if address.nextpage is not None else None
     print("")
 ```
