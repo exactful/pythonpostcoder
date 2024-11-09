@@ -26,7 +26,7 @@ class Postcoder:
         elif response.status_code == 404:
             raise PostcoderEndpointNotFoundError(f"Endpoint not found | 404 {response.request.url}")
         elif response.status_code == 405:
-            raise PostcoderMethodNotAllowedError(f"Method not allowed | 405 {response.request.url}")
+            raise PostcoderMethodNotAllowedError(f"{response.request.method} method not allowed | 405 {response.request.url}")
         elif response.status_code == 500:
             raise PostcoderServerError(f"Server error | 500 {response.request.url}")
         
