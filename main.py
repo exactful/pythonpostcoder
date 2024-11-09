@@ -6,7 +6,7 @@ from config import API_KEY
 try:
     client = Postcoder(api_key=API_KEY)
 
-    # Demo the bank validation endpoint
+    # Demo the address lookup endpoint
     address_result = client.lookup_address("nr1 1ne", "ie", page=0, label="my-test-request")
     
     print(address_result)
