@@ -7,17 +7,20 @@ try:
     client = Postcoder(api_key=API_KEY)
 
     # Demo the address lookup endpoint
-    address_result = client.lookup_address("nr1 1ne", "ie", page=0, label="my-test-request")
+    address_result = client.lookup_address("nr1 1ne", "uk", page=0, label="my-test-request")
     
-    print(address_result)
+    print(f"Dump: {address_result}")
 
+    # Iterate each address
     for address in address_result:
-        print(address.summaryline) if address.summaryline is not None else None
+        print(address.summaryline) if address.summaryline is not None else None # For use in a drop-down list, for example
+
         print(address.addressline1) if address.addressline1 is not None else None
         print(address.addressline2) if address.addressline2 is not None else None
         print(address.addressline3) if address.addressline3 is not None else None
         print(address.addressline4) if address.addressline4 is not None else None
         print(address.addressline5) if address.addressline5 is not None else None
+
         print(f"Next page of results: {address.nextpage}") if address.nextpage is not None else None
         print("")
 
